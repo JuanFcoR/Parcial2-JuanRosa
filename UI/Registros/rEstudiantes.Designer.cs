@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,13 +36,15 @@
             this.EstudainteIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.NombresTextBox = new System.Windows.Forms.TextBox();
             this.EliminarButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
+            this.BuscarButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FechaIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BalanceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstudainteIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -106,18 +109,20 @@
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
-            // button2
+            // GuardarButton
             // 
-            this.button2.Image = global::Parcial2_JuanRosa.Properties.Resources.Save_37110;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(222, 212);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 51);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Guardar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
+            this.GuardarButton.Image = global::Parcial2_JuanRosa.Properties.Resources.Save_37110;
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.GuardarButton.Location = new System.Drawing.Point(222, 212);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(57, 51);
+            this.GuardarButton.TabIndex = 18;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
@@ -130,18 +135,20 @@
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
-            // GuardarButton
+            // BuscarButton
             // 
-            this.GuardarButton.Image = global::Parcial2_JuanRosa.Properties.Resources.buscar__1_;
-            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(277, 26);
-            this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(74, 33);
-            this.GuardarButton.TabIndex = 16;
-            this.GuardarButton.Text = "Buscar";
-            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Image = global::Parcial2_JuanRosa.Properties.Resources.buscar__1_;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarButton.Location = new System.Drawing.Point(277, 26);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(74, 33);
+            this.BuscarButton.TabIndex = 16;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // label4
             // 
@@ -153,26 +160,30 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Fecha de Ingreso";
             // 
-            // dateTimePicker1
+            // FechaIngresoDateTimePicker
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(153, 71);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(97, 20);
-            this.dateTimePicker1.TabIndex = 21;
+            this.FechaIngresoDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechaIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaIngresoDateTimePicker.Location = new System.Drawing.Point(153, 71);
+            this.FechaIngresoDateTimePicker.Name = "FechaIngresoDateTimePicker";
+            this.FechaIngresoDateTimePicker.Size = new System.Drawing.Size(97, 20);
+            this.FechaIngresoDateTimePicker.TabIndex = 21;
+            // 
+            // SuperErrorProvider
+            // 
+            this.SuperErrorProvider.ContainerControl = this;
             // 
             // rEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 281);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.FechaIngresoDateTimePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.EliminarButton);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
+            this.Controls.Add(this.NuevoButton);
+            this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -183,6 +194,7 @@
             this.Text = "rEstudiantes";
             ((System.ComponentModel.ISupportInitialize)(this.BalanceNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstudainteIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,9 +203,9 @@
         #endregion
 
         private System.Windows.Forms.Button EliminarButton;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -201,6 +213,7 @@
         private System.Windows.Forms.NumericUpDown EstudainteIdNumericUpDown;
         private System.Windows.Forms.TextBox NombresTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker FechaIngresoDateTimePicker;
+        private System.Windows.Forms.ErrorProvider SuperErrorProvider;
     }
 }

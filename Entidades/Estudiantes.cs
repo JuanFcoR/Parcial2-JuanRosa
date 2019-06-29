@@ -13,19 +13,22 @@ namespace Parcial2_JuanRosa.Entidades
         public int EstudianteId { get; set; }
         public DateTime FechaIngreso { get; set; }
         public string Nombres { get; set; }
+        public decimal Balance { get; set; }
 
         public Estudiantes()
         {
             EstudianteId = 0;
             FechaIngreso = DateTime.Now;
             Nombres = string.Empty;
+            Balance = 0;
         }
 
-        public Estudiantes(int estudianteId, DateTime fechaIngreso, string nombres)
+        public Estudiantes(int estudianteId, DateTime fechaIngreso, string nombres,decimal balance)
         {
             EstudianteId = estudianteId;
             FechaIngreso = fechaIngreso;
             Nombres = nombres;
+            Balance = balance;
         }
     }
 }
