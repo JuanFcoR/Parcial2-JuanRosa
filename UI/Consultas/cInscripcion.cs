@@ -1,5 +1,6 @@
 ﻿using Parcial2_JuanRosa.BLL;
 using Parcial2_JuanRosa.Entidades;
+using Parcial2_JuanRosa.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -73,7 +74,14 @@ namespace Parcial2_JuanRosa.UI.Consultas
 
         private void EditarButton_Click(object sender, EventArgs e)
         {
-
+            InscripcionRepositorio rep = new InscripcionRepositorio();
+            int id;
+            Inscripcion es = new Inscripcion();
+            int.TryParse(ConsultaDataGridView.CurrentRow.Cells[0].Value.ToString(), out id);
+            es = rep.Buscar(id);
+            rInscripcion re = new rInscripcion(es);
+            this.Hide();
+            re.ShowDialog();
         }
     }
 }

@@ -115,18 +115,17 @@ namespace Parcial2_JuanRosa.BLL
         public override bool Guardar(Inscripcion entity)
         {
             bool paso = false;
+            //decimal resultado;
             try
             {
                 Repositorio<Estudiantes> Est = new Repositorio<Estudiantes>();
                 if (_contexto.Inscripcion.Add(entity)!=null)
                 {
-                    var ids = entity.Inscripciones.Select(p => p.EstudianteId).ToList();
-                    foreach (var items in ids)
+                    
+                    foreach (var items in entity.Inscripciones)
                     {
-                        var Estudiante = Est.Buscar(items);
-                        entity.CalcularMonto();
-                        Estudiante.Balance += entity.Monto;
-                        Est.Modificar(Estudiante);
+                        Estudiantes resultado = _contexto.Estudiantes.Find(items.EstudianteId);
+                        resultado.Balance = items.Total;
 
                     }
                     paso = _contexto.SaveChanges() > 0;

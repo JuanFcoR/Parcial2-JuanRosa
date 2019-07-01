@@ -38,8 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.GuardarButton = new System.Windows.Forms.Button();
-            this.CerrarButton = new System.Windows.Forms.Button();
-            this.NuevoButton = new System.Windows.Forms.Button();
             this.EditarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -155,25 +153,6 @@
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
-            // CerrarButton
-            // 
-            this.CerrarButton.Location = new System.Drawing.Point(616, 188);
-            this.CerrarButton.Name = "CerrarButton";
-            this.CerrarButton.Size = new System.Drawing.Size(75, 23);
-            this.CerrarButton.TabIndex = 33;
-            this.CerrarButton.Text = "Cerrar";
-            this.CerrarButton.UseVisualStyleBackColor = true;
-            // 
-            // NuevoButton
-            // 
-            this.NuevoButton.Location = new System.Drawing.Point(616, 138);
-            this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(75, 23);
-            this.NuevoButton.TabIndex = 32;
-            this.NuevoButton.Text = "Nuevo";
-            this.NuevoButton.UseVisualStyleBackColor = true;
-            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
-            // 
             // EditarButton
             // 
             this.EditarButton.Location = new System.Drawing.Point(616, 87);
@@ -189,8 +168,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 481);
-            this.Controls.Add(this.CerrarButton);
-            this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.EditarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.label4);
@@ -223,8 +200,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button GuardarButton;
-        private System.Windows.Forms.Button CerrarButton;
-        private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button EditarButton;
     }
 }
