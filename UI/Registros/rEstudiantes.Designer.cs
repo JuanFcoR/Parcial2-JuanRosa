@@ -35,13 +35,13 @@
             this.BalanceNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.EstudainteIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.NombresTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.FechaIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.FechaIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BalanceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstudainteIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
@@ -56,6 +56,7 @@
             this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 15;
             this.label3.Text = "Nombres";
+           
             // 
             // label2
             // 
@@ -66,6 +67,7 @@
             this.label2.Size = new System.Drawing.Size(59, 17);
             this.label2.TabIndex = 14;
             this.label2.Text = "Balance";
+            
             // 
             // label1
             // 
@@ -76,6 +78,7 @@
             this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 13;
             this.label1.Text = "EstudianteId";
+           
             // 
             // BalanceNumericUpDown
             // 
@@ -83,6 +86,7 @@
             this.BalanceNumericUpDown.Name = "BalanceNumericUpDown";
             this.BalanceNumericUpDown.Size = new System.Drawing.Size(126, 20);
             this.BalanceNumericUpDown.TabIndex = 12;
+           
             // 
             // EstudainteIdNumericUpDown
             // 
@@ -97,6 +101,31 @@
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(198, 20);
             this.NombresTextBox.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.label4.Location = new System.Drawing.Point(14, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(118, 17);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Fecha de Ingreso";
+            
+            // 
+            // FechaIngresoDateTimePicker
+            // 
+            this.FechaIngresoDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechaIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaIngresoDateTimePicker.Location = new System.Drawing.Point(153, 71);
+            this.FechaIngresoDateTimePicker.Name = "FechaIngresoDateTimePicker";
+            this.FechaIngresoDateTimePicker.Size = new System.Drawing.Size(97, 20);
+            this.FechaIngresoDateTimePicker.TabIndex = 21;
+
+            // 
+            // SuperErrorProvider
+            // 
+            this.SuperErrorProvider.ContainerControl = this;
             // 
             // EliminarButton
             // 
@@ -149,29 +178,6 @@
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label4.Location = new System.Drawing.Point(14, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 17);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Fecha de Ingreso";
-            // 
-            // FechaIngresoDateTimePicker
-            // 
-            this.FechaIngresoDateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechaIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaIngresoDateTimePicker.Location = new System.Drawing.Point(153, 71);
-            this.FechaIngresoDateTimePicker.Name = "FechaIngresoDateTimePicker";
-            this.FechaIngresoDateTimePicker.Size = new System.Drawing.Size(97, 20);
-            this.FechaIngresoDateTimePicker.TabIndex = 21;
-            // 
-            // SuperErrorProvider
-            // 
-            this.SuperErrorProvider.ContainerControl = this;
             // 
             // rEstudiantes
             // 

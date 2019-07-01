@@ -16,7 +16,7 @@ namespace Parcial2_JuanRosa.BLL
         {
             _contexto = new Contexto();
         }
-        public T Buscar(int id)
+        public virtual T Buscar(int id)
         {
             T entity;
             try
@@ -32,7 +32,7 @@ namespace Parcial2_JuanRosa.BLL
             return entity;
         }
 
-        public bool Eliminar(int id)
+        public virtual bool Eliminar(int id)
         {
             bool paso = false;
             try
@@ -48,7 +48,7 @@ namespace Parcial2_JuanRosa.BLL
             return paso;
         }
 
-        public List<T> GetList(Expression<Func<T, bool>> expression)
+        public virtual List<T> GetList(Expression<Func<T, bool>> expression)
         {
            List<T> Lista = new List<T>();
             try
@@ -63,7 +63,7 @@ namespace Parcial2_JuanRosa.BLL
             return Lista ;
         }
 
-        public bool Guardar(T entity)
+        public virtual bool Guardar(T entity)
         {
             bool paso = false;
             try
@@ -79,7 +79,7 @@ namespace Parcial2_JuanRosa.BLL
             return paso;
         }
 
-        public bool Modificar(T entity)
+        public virtual bool Modificar(T entity)
         {
             bool paso = false;
 
@@ -97,7 +97,7 @@ namespace Parcial2_JuanRosa.BLL
             return paso;
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             _contexto.Dispose();
         }

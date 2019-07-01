@@ -13,19 +13,25 @@ namespace Parcial2_JuanRosa.Entidades
         public int InscripcionId { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Monto { get; set; }
+        public decimal PrecioCredito { get; set; }
+
+        public List<InscripcionDetalle> Inscripciones;
 
         public Inscripcion()
         {
             InscripcionId = 0;
             Fecha = DateTime.Now;
             Monto = 0;
+            Inscripciones = new List<InscripcionDetalle>();
+            PrecioCredito = 0;
         }
 
-        public Inscripcion(int inscripcionId, DateTime fecha, decimal monto)
+        public Inscripcion(int inscripcionId, DateTime fecha, decimal monto,decimal precioCredito)
         {
             InscripcionId = inscripcionId;
             Fecha = fecha;
             Monto = monto;
+            PrecioCredito = precioCredito;
         }
     }
 }

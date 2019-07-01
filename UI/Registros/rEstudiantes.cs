@@ -1,5 +1,6 @@
 ﻿using Parcial2_JuanRosa.BLL;
 using Parcial2_JuanRosa.Entidades;
+using Parcial2_JuanRosa.UI.Consultas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,11 @@ namespace Parcial2_JuanRosa.UI.Registros
         public rEstudiantes()
         {
             InitializeComponent();
+        }
+
+        public rEstudiantes(Estudiantes est)
+        {
+            LlenarCampos(est);
         }
 
         public bool validar()
@@ -78,18 +84,8 @@ namespace Parcial2_JuanRosa.UI.Registros
             Repositorio<Estudiantes> r = new Repositorio<Estudiantes>();
             Estudiantes est = new Estudiantes();
             int.TryParse(EstudainteIdNumericUpDown.Text, out id);
-            limpiar();
-            est=r.Buscar(id);
-
-            if (est != null)
-            {
-                MessageBox.Show("Estudiante Encontrado");
-                LlenarCampos(est);
-            }
-            else
-            {
-                MessageBox.Show("Estudiante no encontrado");
-            }
+            cEstudiantes cons = new cEstudiantes();
+            cons.ShowDialog();
             
 
         }
@@ -139,5 +135,7 @@ namespace Parcial2_JuanRosa.UI.Registros
             else
                 SuperErrorProvider.SetError(EstudainteIdNumericUpDown, "No se puede Eliminar un estudiante que no existe");
         }
+
+       
     }
 }

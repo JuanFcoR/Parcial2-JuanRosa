@@ -38,6 +38,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.GuardarButton = new System.Windows.Forms.Button();
+            this.CerrarButton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
+            this.EditarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,11 +50,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultaDataGridView.Location = new System.Drawing.Point(9, 51);
+            this.ConsultaDataGridView.Location = new System.Drawing.Point(11, 51);
             this.ConsultaDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.ConsultaDataGridView.Name = "ConsultaDataGridView";
             this.ConsultaDataGridView.RowTemplate.Height = 24;
-            this.ConsultaDataGridView.Size = new System.Drawing.Size(603, 420);
+            this.ConsultaDataGridView.Size = new System.Drawing.Size(591, 420);
             this.ConsultaDataGridView.TabIndex = 0;
             // 
             // label1
@@ -97,7 +100,7 @@
             this.CriterioTextBox.Location = new System.Drawing.Point(286, 26);
             this.CriterioTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.CriterioTextBox.Name = "CriterioTextBox";
-            this.CriterioTextBox.Size = new System.Drawing.Size(239, 20);
+            this.CriterioTextBox.Size = new System.Drawing.Size(316, 20);
             this.CriterioTextBox.TabIndex = 4;
             // 
             // DesdeDateTimePicker
@@ -113,7 +116,7 @@
             // 
             this.HastaDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.HastaDateTimePicker.Location = new System.Drawing.Point(97, 26);
+            this.HastaDateTimePicker.Location = new System.Drawing.Point(99, 23);
             this.HastaDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.HastaDateTimePicker.Name = "HastaDateTimePicker";
             this.HastaDateTimePicker.Size = new System.Drawing.Size(85, 20);
@@ -143,19 +146,52 @@
             // 
             this.GuardarButton.Image = global::Parcial2_JuanRosa.Properties.Resources.buscar__1_;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(532, 14);
+            this.GuardarButton.Location = new System.Drawing.Point(609, 19);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(82, 33);
             this.GuardarButton.TabIndex = 17;
             this.GuardarButton.Text = "Consultar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            // 
+            // CerrarButton
+            // 
+            this.CerrarButton.Location = new System.Drawing.Point(616, 188);
+            this.CerrarButton.Name = "CerrarButton";
+            this.CerrarButton.Size = new System.Drawing.Size(75, 23);
+            this.CerrarButton.TabIndex = 33;
+            this.CerrarButton.Text = "Cerrar";
+            this.CerrarButton.UseVisualStyleBackColor = true;
+            // 
+            // NuevoButton
+            // 
+            this.NuevoButton.Location = new System.Drawing.Point(616, 138);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(75, 23);
+            this.NuevoButton.TabIndex = 32;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            // 
+            // EditarButton
+            // 
+            this.EditarButton.Location = new System.Drawing.Point(616, 87);
+            this.EditarButton.Name = "EditarButton";
+            this.EditarButton.Size = new System.Drawing.Size(75, 23);
+            this.EditarButton.TabIndex = 31;
+            this.EditarButton.Text = "Editar";
+            this.EditarButton.UseVisualStyleBackColor = true;
+            this.EditarButton.Click += new System.EventHandler(this.EditarButton_Click);
             // 
             // cEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 481);
+            this.ClientSize = new System.Drawing.Size(700, 481);
+            this.Controls.Add(this.CerrarButton);
+            this.Controls.Add(this.NuevoButton);
+            this.Controls.Add(this.EditarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -187,5 +223,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.Button CerrarButton;
+        private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.Button EditarButton;
     }
 }

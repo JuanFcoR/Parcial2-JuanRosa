@@ -1,5 +1,6 @@
 ﻿using Parcial2_JuanRosa.BLL;
 using Parcial2_JuanRosa.Entidades;
+using Parcial2_JuanRosa.UI.Consultas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,11 @@ namespace Parcial2_JuanRosa.UI.Registros
         public rAsignaturas()
         {
             InitializeComponent();
+        }
+
+        public rAsignaturas(Asignaturas asi)
+        {
+            LlenarCampos(asi);
         }
 
         public bool validar()
@@ -105,12 +111,8 @@ namespace Parcial2_JuanRosa.UI.Registros
             Asignaturas asi = new Asignaturas();
             Repositorio <Asignaturas> rep = new Repositorio<Asignaturas>();
             int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
-            limpiar();
-            asi = rep.Buscar(id);
-            if (asi != null)
-                MessageBox.Show("Asignatura Encontrada");
-            else
-                MessageBox.Show("Asignatura no encontrada");
+            cAsignaturas asig = new cAsignaturas();
+            asig.ShowDialog();
 
 
         }
