@@ -17,6 +17,12 @@ namespace Parcial2_JuanRosa.Entidades
 
         public List<InscripcionDetalle> Inscripciones;
 
+        public void CalcularMonto()
+        {
+            
+            Monto=Inscripciones.Sum(p => p.Total);
+        }
+
         public Inscripcion()
         {
             InscripcionId = 0;

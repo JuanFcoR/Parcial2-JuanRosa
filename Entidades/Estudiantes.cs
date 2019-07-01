@@ -23,12 +23,12 @@ namespace Parcial2_JuanRosa.Entidades
             Balance = 0;
         }
 
-        public Estudiantes(int estudianteId, DateTime fechaIngreso, string nombres,decimal balance)
+        public Estudiantes(int estudianteId, DateTime fechaIngreso, string nombres)
         {
             EstudianteId = estudianteId;
             FechaIngreso = fechaIngreso;
             Nombres = nombres;
-            Balance = balance;
+            
         }
     }
 }

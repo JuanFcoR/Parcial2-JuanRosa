@@ -56,7 +56,6 @@
             this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 15;
             this.label3.Text = "Nombres";
-           
             // 
             // label2
             // 
@@ -67,7 +66,6 @@
             this.label2.Size = new System.Drawing.Size(59, 17);
             this.label2.TabIndex = 14;
             this.label2.Text = "Balance";
-            
             // 
             // label1
             // 
@@ -78,15 +76,14 @@
             this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 13;
             this.label1.Text = "EstudianteId";
-           
             // 
             // BalanceNumericUpDown
             // 
             this.BalanceNumericUpDown.Location = new System.Drawing.Point(153, 161);
             this.BalanceNumericUpDown.Name = "BalanceNumericUpDown";
+            this.BalanceNumericUpDown.ReadOnly = true;
             this.BalanceNumericUpDown.Size = new System.Drawing.Size(126, 20);
             this.BalanceNumericUpDown.TabIndex = 12;
-           
             // 
             // EstudainteIdNumericUpDown
             // 
@@ -111,7 +108,6 @@
             this.label4.Size = new System.Drawing.Size(118, 17);
             this.label4.TabIndex = 20;
             this.label4.Text = "Fecha de Ingreso";
-            
             // 
             // FechaIngresoDateTimePicker
             // 
@@ -121,7 +117,6 @@
             this.FechaIngresoDateTimePicker.Name = "FechaIngresoDateTimePicker";
             this.FechaIngresoDateTimePicker.Size = new System.Drawing.Size(97, 20);
             this.FechaIngresoDateTimePicker.TabIndex = 21;
-
             // 
             // SuperErrorProvider
             // 

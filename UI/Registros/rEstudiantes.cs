@@ -22,6 +22,7 @@ namespace Parcial2_JuanRosa.UI.Registros
 
         public rEstudiantes(Estudiantes est)
         {
+            InitializeComponent();
             LlenarCampos(est);
         }
 
@@ -53,7 +54,7 @@ namespace Parcial2_JuanRosa.UI.Registros
             EstudainteIdNumericUpDown.Value = 0;
             FechaIngresoDateTimePicker.Value = DateTime.Now;
             NombresTextBox.Text = string.Empty;
-            BalanceNumericUpDown.Value = 0;
+            
 
         }
 
@@ -63,7 +64,7 @@ namespace Parcial2_JuanRosa.UI.Registros
             est.EstudianteId = Convert.ToInt32(EstudainteIdNumericUpDown.Value);
             est.FechaIngreso = FechaIngresoDateTimePicker.Value;
             est.Nombres = NombresTextBox.Text;
-            est.Balance = BalanceNumericUpDown.Value;
+            
             return est;
         }
 
@@ -125,15 +126,24 @@ namespace Parcial2_JuanRosa.UI.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
+            
             Repositorio<Estudiantes> rep = new Repositorio<Estudiantes>();
+            
             int id;
             SuperErrorProvider.Clear();
             int.TryParse(EstudainteIdNumericUpDown.Text,out id);
-            limpiar();
-            if (rep.Eliminar(id))
-                MessageBox.Show("Elminado");
+            Estudiantes est = rep.Buscar(id);
+            if (est.Balance > 0)
+            {
+                limpiar();
+                if (rep.Eliminar(id))
+                    MessageBox.Show("Elminado");
+                else
+                    SuperErrorProvider.SetError(EstudainteIdNumericUpDown, "No se puede Eliminar un estudiante que no existe");
+            }
             else
-                SuperErrorProvider.SetError(EstudainteIdNumericUpDown, "No se puede Eliminar un estudiante que no existe");
+                MessageBox.Show("Nose puede eliminar hasta que el balance este en 0");
+
         }
 
        

@@ -23,6 +23,7 @@ namespace Parcial2_JuanRosa.UI.Registros
         public rAsignaturas(Asignaturas asi)
         {
             LlenarCampos(asi);
+            AsignaturaIdNumericUpDown.Minimum =  0;
         }
 
         public bool validar()
@@ -33,6 +34,13 @@ namespace Parcial2_JuanRosa.UI.Registros
             {
                 SuperErrorProvider.SetError(DescripcionTextBox, "Este campo no puede estar vacio");
                 DescripcionTextBox.Focus();
+                paso = false;
+            }
+
+            if (CreditosNumericUpDown.Value<=0)
+            {
+                SuperErrorProvider.SetError(CreditosNumericUpDown, "Este campo debe ser mayor a 0");
+                CreditosNumericUpDown.Focus();
                 paso = false;
             }
 

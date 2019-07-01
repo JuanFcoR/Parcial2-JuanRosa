@@ -23,5 +23,19 @@ namespace Parcial2_JuanRosa
             rInscripcion ins = new rInscripcion();
             ins.ShowDialog();
         }
+
+       
+
+        private void EstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEstudiantes res = new rEstudiantes();
+            res.ShowDialog();
+        }
+
+        private void AsignaturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rAsignaturas ras = new rAsignaturas();
+            ras.ShowDialog();
+        }
     }
 }

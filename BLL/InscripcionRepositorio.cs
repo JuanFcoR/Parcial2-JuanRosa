@@ -10,6 +10,7 @@ namespace Parcial2_JuanRosa.BLL
 {
     public class InscripcionRepositorio:Repositorio<Inscripcion>
     {
+
         public override Inscripcion Buscar(int id)
         {
             Inscripcion ins = new Inscripcion();
@@ -33,13 +34,26 @@ namespace Parcial2_JuanRosa.BLL
 
         public override bool Modificar(Inscripcion entity)
         {
+            Repositorio<Estudiantes> estudiante = new Repositorio<Estudiantes>();
             bool paso = false;
             try
             {
-                
+                var ids = entity.Inscripciones.Select(p => p.EstudianteId);
+                var asg = entity.Inscripciones.Select(p => p.AsignaturaId);
+                var anterior = new Repositorio<Inscripcion>().Buscar(entity.InscripcionId);
+
+                foreach (var item in ids)
+                {
+                   var estu = estudiante.Buscar(item);
+                    estu.Balance-=anterior.Monto;
+
+                }
+
+               
+
                 foreach (var item in entity.Inscripciones)
                 {
-                    if (entity.Inscripciones.Exists(d => d.ID == item.ID))
+                    if (!entity.Inscripciones.Any(d => d.ID == item.ID))
                         _contexto.Entry(item).State = EntityState.Deleted;
                 }
                 foreach (var item in entity.Inscripciones)
@@ -47,10 +61,30 @@ namespace Parcial2_JuanRosa.BLL
                     var estado = item.ID > 0 ? EntityState.Modified : EntityState.Added; 
                     _contexto.Entry(item).State = estado;
                 }
+                
+               
+                entity.CalcularMonto();
+
+
+                foreach (var item in ids)
+                {
+                    var estu = estudiante.Buscar(item);
+                    estu.Balance += entity.Monto;
+
+                }
+
+
+                foreach (var item in ids)
+                {
+                    var estu = estudiante.Buscar(item);
+                    estudiante.Modificar(estu);
+
+                }
                 _contexto.Entry(entity).State = EntityState.Modified;
 
-                if (_contexto.SaveChanges() > 0)
-                    paso = true;
+                paso = _contexto.SaveChanges() > 0;
+
+
             }
             catch (Exception)
             {
@@ -77,6 +111,55 @@ namespace Parcial2_JuanRosa.BLL
             _contexto.Dispose();
             return paso;
         }
+
+        public override bool Guardar(Inscripcion entity)
+        {
+            bool paso = false;
+            try
+            {
+                Repositorio<Estudiantes> Est = new Repositorio<Estudiantes>();
+                if (_contexto.Inscripcion.Add(entity)!=null)
+                {
+                    var ids = entity.Inscripciones.Select(p => p.EstudianteId).ToList();
+                    foreach (var items in ids)
+                    {
+                        var Estudiante = Est.Buscar(items);
+                        entity.CalcularMonto();
+                        Estudiante.Balance += entity.Monto;
+                        Est.Modificar(Estudiante);
+
+                    }
+                    paso = _contexto.SaveChanges() > 0;
+                    
+                }
+                    
+                
+                
+            }
+           
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return paso;
+        }
+
+        public bool Existe(int id)
+        {
+            bool paso = false;
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return paso;
+        }
     }
     
+
 }
