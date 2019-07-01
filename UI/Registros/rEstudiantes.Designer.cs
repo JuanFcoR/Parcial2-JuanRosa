@@ -79,6 +79,7 @@
             // 
             // BalanceNumericUpDown
             // 
+            this.BalanceNumericUpDown.Enabled = false;
             this.BalanceNumericUpDown.Location = new System.Drawing.Point(153, 161);
             this.BalanceNumericUpDown.Name = "BalanceNumericUpDown";
             this.BalanceNumericUpDown.ReadOnly = true;

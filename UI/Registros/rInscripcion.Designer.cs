@@ -107,6 +107,7 @@
             // 
             // MontoNumericUpDown
             // 
+            this.MontoNumericUpDown.Enabled = false;
             this.MontoNumericUpDown.Location = new System.Drawing.Point(146, 130);
             this.MontoNumericUpDown.Name = "MontoNumericUpDown";
             this.MontoNumericUpDown.ReadOnly = true;

@@ -95,13 +95,25 @@ namespace Parcial2_JuanRosa.BLL
 
         public override bool Eliminar(int id)
         {
+            
             bool paso = false;
             try
             {
                 Inscripcion ins = _contexto.Inscripcion.Find(id);
                 _contexto.Entry(ins).State = EntityState.Deleted;
-                paso = _contexto.SaveChanges() > 0;
-               
+                Repositorio<Estudiantes> Est = new Repositorio<Estudiantes>();
+                
+
+                    foreach (var items in ins.Inscripciones)
+                    {
+                        Estudiantes resultado = _contexto.Estudiantes.Find(items.EstudianteId);
+                        resultado.Balance -= items.Total;
+
+                    }
+                    paso = _contexto.SaveChanges() > 0;
+
+                
+
             }
             catch (Exception)
             {
@@ -125,7 +137,7 @@ namespace Parcial2_JuanRosa.BLL
                     foreach (var items in entity.Inscripciones)
                     {
                         Estudiantes resultado = _contexto.Estudiantes.Find(items.EstudianteId);
-                        resultado.Balance = items.Total;
+                        resultado.Balance += items.Total;
 
                     }
                     paso = _contexto.SaveChanges() > 0;
