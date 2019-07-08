@@ -18,10 +18,12 @@ namespace Parcial2_JuanRosa.BLL
             {
                 ins = _contexto.Inscripcion.Find(id);
 
-                ins.Inscripciones.Count();
+               
 
-                foreach (var item in ins.Inscripciones)      
-                { string s = item.AsignaturaId.ToString();  } 
+                if(ins!=null)
+                {
+                    ins.Inscripciones.Count();
+                }
 
             }
             catch (Exception)
@@ -136,12 +138,13 @@ namespace Parcial2_JuanRosa.BLL
                     
                     foreach (var items in entity.Inscripciones)
                     {
-                        Estudiantes resultado = _contexto.Estudiantes.Find(items.EstudianteId);
-                        resultado.Balance += items.Total;
+                        var resultado = _contexto.Estudiantes.Find(items.EstudianteId);
+                        resultado.Balance = items.Total;
+                        
 
                     }
                     paso = _contexto.SaveChanges() > 0;
-                    
+
                 }
                     
                 

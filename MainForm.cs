@@ -32,10 +32,22 @@ namespace Parcial2_JuanRosa
             res.ShowDialog();
         }
 
-        private void AsignaturasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AsignaturasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             rAsignaturas ras = new rAsignaturas();
             ras.ShowDialog();
+        }
+
+        private void EstudiantesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            rEstudiantes ras = new rEstudiantes();
+            ras.ShowDialog();
+        }
+
+        private void InscripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rInscripcion ris = new rInscripcion();
+            ris.ShowDialog();
         }
     }
 }

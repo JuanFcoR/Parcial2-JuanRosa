@@ -1,5 +1,5 @@
-﻿using Parcial2_JuanRosa.BLL;
-using Parcial2_JuanRosa.Entidades;
+﻿using BLL;
+using Entidades;
 using Parcial2_JuanRosa.UI.Consultas;
 using System;
 using System.Collections.Generic;

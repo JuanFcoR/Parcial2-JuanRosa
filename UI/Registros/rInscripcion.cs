@@ -1,5 +1,6 @@
-﻿using Parcial2_JuanRosa.BLL;
-using Parcial2_JuanRosa.Entidades;
+﻿
+using BLL;
+using Entidades;
 using Parcial2_JuanRosa.UI.Consultas;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,12 @@ namespace Parcial2_JuanRosa.UI.Registros
         {
             bool paso = true;
 
-            
+            if(PrecioCreditosNumericUpDown.Value<=0)
+            {
+                SuperErrorProvider.SetError(PrecioCreditosNumericUpDown, "No puede ser menor a 0");
+                PrecioCreditosNumericUpDown.Focus();
+                paso = false;
+            }
 
             return paso;
         }
@@ -188,6 +194,7 @@ namespace Parcial2_JuanRosa.UI.Registros
         private void RInscripcion_Load(object sender, EventArgs e)
         {
             CargarComboBox();
+            CargarGrid();
         }
 
         private void RemoverButton_Click(object sender, EventArgs e)

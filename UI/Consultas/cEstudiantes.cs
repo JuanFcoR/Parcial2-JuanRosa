@@ -1,6 +1,8 @@
-﻿using Parcial2_JuanRosa.BLL;
-using Parcial2_JuanRosa.Entidades;
+﻿
+using BLL;
+using Entidades;
 using Parcial2_JuanRosa.UI.Registros;
+using Parcial2_JuanRosa.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +17,7 @@ namespace Parcial2_JuanRosa.UI.Consultas
 {
     public partial class cEstudiantes : Form
     {
+        public List<Estudiantes> listado;
         public cEstudiantes()
         {
             InitializeComponent();
@@ -22,7 +25,7 @@ namespace Parcial2_JuanRosa.UI.Consultas
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            var listado = new List<Estudiantes>();
+            listado = new List<Estudiantes>();
             Repositorio<Estudiantes> rep = new Repositorio<Estudiantes>();
 
             if (CriterioTextBox.Text.Trim().Length > 0)
@@ -62,6 +65,7 @@ namespace Parcial2_JuanRosa.UI.Consultas
             }
 
             ConsultaDataGridView.DataSource = null;
+            
             ConsultaDataGridView.DataSource = listado;
 
         }
@@ -82,5 +86,17 @@ namespace Parcial2_JuanRosa.UI.Consultas
             this.Hide();
             re.ShowDialog();
         }
+
+        //private void ImprimirButton_Click(object sender, EventArgs e)
+        //{
+        //    if(listado.Count==0)
+        //    {
+        //        MessageBox.Show("No hay que imprimir");
+        //    }
+
+        //    ReporteEstudiantes re = new ReporteEstudiantes(listado);
+        //    re.ShowDialog();
+
+        //}
     }
 }
